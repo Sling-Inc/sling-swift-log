@@ -140,6 +140,14 @@ public protocol LogHandler: _SwiftLogSendableLogHandler {
              function: String,
              line: UInt)
 
+    /// 오류를 기록하기 위한 메서드.
+    func record(error: any Error,
+                metadata: Logger.Metadata?,
+                source: String,
+                file: String,
+                function: String,
+                line: UInt)
+
     /// SwiftLog 1.0 compatibility method. Please do _not_ implement, implement
     /// `log(level:message:metadata:source:file:function:line:)` instead.
     @available(*, deprecated, renamed: "log(level:message:metadata:source:file:function:line:)")

@@ -129,6 +129,17 @@ extension Logger {
         }
     }
 
+    @inlinable
+    public func record(error: @autoclosure () -> any Error,
+                       metadata: @autoclosure () -> Logger.Metadata? = nil,
+                       source: @autoclosure () -> String? = nil,
+                       file: String = #fileID, function: String = #function, line: UInt = #line) {
+        self.handler.record(error: error(),
+                            metadata: metadata(),
+                            source: source() ?? Logger.currentModule(fileID: (file)),
+                            file: file, function: function, line: line)
+    }
+
     /// Log a message passing the log level as a parameter.
     ///
     /// If the ``logLevel`` passed to this method is more severe than the `Logger`'s ``logLevel``, it will be logged,
