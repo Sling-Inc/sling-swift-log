@@ -437,6 +437,10 @@ class LoggingTest: XCTestCase {
         struct CustomHandler: LogHandler {
             func log(level: Logger.Level, message: Logger.Message, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt) {}
 
+            func record(error: Error, metadata: Logging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+                //
+            }
+
             subscript(metadataKey _: String) -> Logger.Metadata.Value? {
                 get { return nil }
                 set {}
@@ -764,6 +768,10 @@ class LoggingTest: XCTestCase {
             func log(level: Logger.Level, message: Logger.Message, metadata: Logger.Metadata?,
                      source: String, file: String, function: String, line: UInt) {
                 self.recorder.record(level: level, metadata: metadata, message: message, source: source)
+            }
+
+            func record(error: Error, metadata: Logging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+                //
             }
 
             subscript(metadataKey metadataKey: String) -> Logger.Metadata.Value? {

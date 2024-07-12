@@ -1002,6 +1002,10 @@ public struct MultiplexLogHandler: LogHandler {
         }
     }
 
+    public func record(error: Error, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+        //
+    }
+
     public var metadata: Logger.Metadata {
         get {
             var effective: Logger.Metadata = [:]
@@ -1225,6 +1229,10 @@ public struct StreamLogHandler: LogHandler {
         stream.write("\(self.timestamp()) \(level) \(self.label) :\(prettyMetadata.map { " \($0)" } ?? "") [\(source)] \(message)\n")
     }
 
+    public func record(error: Error, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+        //
+    }
+
     internal static func prepareMetadata(base: Logger.Metadata, provider: Logger.MetadataProvider?, explicit: Logger.Metadata?) -> Logger.Metadata? {
         var metadata = base
 
@@ -1294,6 +1302,10 @@ public struct SwiftLogNoOpLogHandler: LogHandler {
                     file: String,
                     function: String,
                     line: UInt) {}
+
+    public func record(error: Error, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+        //
+    }
 
     @inlinable public subscript(metadataKey _: String) -> Logger.Metadata.Value? {
         get {

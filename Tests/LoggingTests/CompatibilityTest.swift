@@ -73,6 +73,10 @@ private struct OldSchoolLogHandler: LogHandler {
         self.recorder.record(level: level, metadata: metadata, message: message, source: "no source")
     }
 
+    func record(error: Error, metadata: Logging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+        //
+    }
+
     subscript(metadataKey metadataKey: String) -> Logger.Metadata.Value? {
         get {
             return self.metadata[metadataKey]

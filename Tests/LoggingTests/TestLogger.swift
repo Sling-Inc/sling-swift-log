@@ -50,6 +50,10 @@ internal struct TestLogging {
 }
 
 internal struct TestLogHandler: LogHandler {
+    func record(error: Error, metadata: Logging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+        //
+    }
+    
     private let recorder: Recorder
     private let config: Config
     private var logger: Logger // the actual logger
