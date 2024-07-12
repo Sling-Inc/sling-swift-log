@@ -17,7 +17,6 @@ import PackageDescription
 
 let package = Package(
     name: "swift-log",
-    platforms: [.iOS(.v15)],
     products: [
         .library(name: "Logging", targets: ["Logging"]),
     ],
