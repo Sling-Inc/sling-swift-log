@@ -18,7 +18,7 @@ import PackageDescription
 let package = Package(
     name: "sling-swift-log",
     products: [
-        .library(name: "Logging", targets: ["Logging"]),
+        .library(name: "SlingLogging", targets: ["Logging"]),
     ],
     targets: [
         .target(
