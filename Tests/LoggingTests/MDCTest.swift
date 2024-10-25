@@ -12,7 +12,7 @@
 //
 //===----------------------------------------------------------------------===//
 import Dispatch
-@testable import Logging
+@testable import SlingLogging
 import XCTest
 
 class MDCTest: XCTestCase {

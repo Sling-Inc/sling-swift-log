@@ -11,7 +11,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 //===----------------------------------------------------------------------===//
-@testable import Logging
+@testable import SlingLogging
 import XCTest
 
 #if canImport(Darwin)
@@ -86,7 +86,7 @@ public struct LogHandlerThatDidNotImplementMetadataProviders: LogHandler {
         self.testLogging = testLogging
     }
 
-    public subscript(metadataKey _: String) -> Logging.Logger.Metadata.Value? {
+    public subscript(metadataKey _: String) -> SlingLogging.Logger.Metadata.Value? {
         get {
             return nil
         }
@@ -95,9 +95,9 @@ public struct LogHandlerThatDidNotImplementMetadataProviders: LogHandler {
         }
     }
 
-    public var metadata: Logging.Logger.Metadata = [:]
+    public var metadata: SlingLogging.Logger.Metadata = [:]
 
-    public var logLevel: Logging.Logger.Level = .trace
+    public var logLevel: SlingLogging.Logger.Level = .trace
 
     public func log(level: Logger.Level,
                     message: Logger.Message,
@@ -109,7 +109,7 @@ public struct LogHandlerThatDidNotImplementMetadataProviders: LogHandler {
         self.testLogging.make(label: "fake").log(level: level, message: message, metadata: metadata, source: source, file: file, function: function, line: line)
     }
 
-    public func record(error: Error, metadata: Logging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+    public func record(error: Error, metadata: SlingLogging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
         //
     }
 }
@@ -120,7 +120,7 @@ public struct LogHandlerThatDidImplementMetadataProviders: LogHandler {
         self.testLogging = testLogging
     }
 
-    public subscript(metadataKey _: String) -> Logging.Logger.Metadata.Value? {
+    public subscript(metadataKey _: String) -> SlingLogging.Logger.Metadata.Value? {
         get {
             return nil
         }
@@ -129,9 +129,9 @@ public struct LogHandlerThatDidImplementMetadataProviders: LogHandler {
         }
     }
 
-    public var metadata: Logging.Logger.Metadata = [:]
+    public var metadata: SlingLogging.Logger.Metadata = [:]
 
-    public var logLevel: Logging.Logger.Level = .trace
+    public var logLevel: SlingLogging.Logger.Level = .trace
 
     public var metadataProvider: Logger.MetadataProvider?
 
@@ -145,7 +145,7 @@ public struct LogHandlerThatDidImplementMetadataProviders: LogHandler {
         self.testLogging.make(label: "fake").log(level: level, message: message, metadata: metadata, source: source, file: file, function: function, line: line)
     }
 
-    public func record(error: Error, metadata: Logging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+    public func record(error: Error, metadata: SlingLogging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
         //
     }
 }

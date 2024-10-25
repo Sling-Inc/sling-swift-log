@@ -12,7 +12,7 @@
 //
 //===----------------------------------------------------------------------===//
 import Foundation
-@testable import Logging
+@testable import SlingLogging
 import XCTest
 #if os(Windows)
 import WinSDK
@@ -50,7 +50,7 @@ internal struct TestLogging {
 }
 
 internal struct TestLogHandler: LogHandler {
-    func record(error: Error, metadata: Logging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+    func record(error: Error, metadata: SlingLogging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
         //
     }
     

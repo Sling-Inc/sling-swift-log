@@ -17,6 +17,9 @@ import PackageDescription
 
 let package = Package(
     name: "sling-swift-log",
+    platforms: [
+        .iOS(.v16),
+    ],
     products: [
         .library(name: "SlingLogging", targets: ["SlingLogging"]),
     ],

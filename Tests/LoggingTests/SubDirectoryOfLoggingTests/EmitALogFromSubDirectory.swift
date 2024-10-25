@@ -12,7 +12,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-import Logging
+import SlingLogging
 
 internal func emitLogMessage(_ message: Logger.Message, to logger: Logger) {
     logger.trace(message)

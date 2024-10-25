@@ -11,7 +11,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 //===----------------------------------------------------------------------===//
-@testable import Logging
+@testable import SlingLogging
 import XCTest
 
 #if canImport(Darwin)
@@ -437,7 +437,7 @@ class LoggingTest: XCTestCase {
         struct CustomHandler: LogHandler {
             func log(level: Logger.Level, message: Logger.Message, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt) {}
 
-            func record(error: Error, metadata: Logging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+            func record(error: Error, metadata: SlingLogging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
                 //
             }
 
@@ -770,7 +770,7 @@ class LoggingTest: XCTestCase {
                 self.recorder.record(level: level, metadata: metadata, message: message, source: source)
             }
 
-            func record(error: Error, metadata: Logging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+            func record(error: Error, metadata: SlingLogging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
                 //
             }
 

@@ -12,7 +12,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-/* NOT @testable */ import Logging
+/* NOT @testable */ import SlingLogging
 import XCTest
 
 final class CompatibilityTest: XCTestCase {
@@ -73,7 +73,7 @@ private struct OldSchoolLogHandler: LogHandler {
         self.recorder.record(level: level, metadata: metadata, message: message, source: "no source")
     }
 
-    func record(error: Error, metadata: Logging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+    func record(error: Error, metadata: SlingLogging.Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
         //
     }
 

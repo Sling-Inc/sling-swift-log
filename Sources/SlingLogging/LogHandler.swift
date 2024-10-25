@@ -151,7 +151,7 @@ public protocol LogHandler: _SwiftLogSendableLogHandler {
     /// SwiftLog 1.0 compatibility method. Please do _not_ implement, implement
     /// `log(level:message:metadata:source:file:function:line:)` instead.
     @available(*, deprecated, renamed: "log(level:message:metadata:source:file:function:line:)")
-    func log(level: Logging.Logger.Level, message: Logging.Logger.Message, metadata: Logging.Logger.Metadata?, file: String, function: String, line: UInt)
+    func log(level: SlingLogging.Logger.Level, message: SlingLogging.Logger.Message, metadata: SlingLogging.Logger.Metadata?, file: String, function: String, line: UInt)
 
     /// Add, remove, or change the logging metadata.
     ///
@@ -207,7 +207,7 @@ extension LogHandler {
     }
 
     @available(*, deprecated, renamed: "log(level:message:metadata:source:file:function:line:)")
-    public func log(level: Logging.Logger.Level, message: Logging.Logger.Message, metadata: Logging.Logger.Metadata?, file: String, function: String, line: UInt) {
+    public func log(level: SlingLogging.Logger.Level, message: SlingLogging.Logger.Message, metadata: SlingLogging.Logger.Metadata?, file: String, function: String, line: UInt) {
         self.log(level: level,
                  message: message,
                  metadata: metadata,

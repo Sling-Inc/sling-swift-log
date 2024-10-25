@@ -11,7 +11,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 //===----------------------------------------------------------------------===//
-@testable import Logging
+@testable import SlingLogging
 import XCTest
 #if compiler(>=6.0) || canImport(Darwin)
 import Dispatch
